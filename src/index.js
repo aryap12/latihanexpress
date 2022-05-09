@@ -1,8 +1,11 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+const knexconfig = require('./models/knexfile')
+const knex = require('knex')(knexconfig["development"])
 
 const router = require('./routes/router');
+const { default: knex } = require('knex');
 
 const app = express();
 
